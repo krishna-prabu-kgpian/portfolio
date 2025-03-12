@@ -1,0 +1,32 @@
+.skills-tree-section {
+    padding: 4rem 5rem;
+    background-color: #f9f9f9; /* or #333 if you want a dark background */
+    color: #333;
+  }
+  
+  .skills-tree-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  /* Container for the SVG diagram */
+  .skill-tree-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* allows scrolling if the tree is larger than the container */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    padding: 1rem;
+  }
+  
+  .skill-tree-svg {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* ensures it doesn’t exceed parent container width */
+    display: block;
+  }
+  
