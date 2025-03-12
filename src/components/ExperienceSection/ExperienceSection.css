@@ -1,208 +1,199 @@
 .experience-section {
-    padding: 4rem 5rem;
-    background-color: #ffffff;
-    color: #333;
+  padding: 4rem 5rem;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.experience-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Timeline container */
+.experience-timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+
+/* Vertical line down the center */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
+/* Each experience item in the timeline */
+.experience-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+/* Left side: image card */
+.experience-image {
+  width: 45%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  margin-right: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.experience-image:hover {
+  transform: scale(1.02);
+}
+
+/* Overlay on hover */
+.experience-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.experience-image:hover .experience-image-overlay {
+  transform: translateY(0);
+}
+
+.experience-image-overlay button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-image-overlay button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dot in the center of timeline */
+.experience-dot {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.2rem;
+}
+
+/* Right side: text + year */
+.experience-content {
+  width: 45%;
+  padding-top: 0.5rem;
+  padding-left: 10rem;
+}
+
+.experience-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.experience-content h4 {
+  margin: 0.5rem 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.experience-year {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+/* Modal Overlay & Content */
+.exp-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.exp-modal-content {
+  position: relative;
+  background: #fff;
+  width: 90%;
+  max-width: 700px;
+  padding: 2rem;
+  border-radius: 8px;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .experience-section h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  
-  /* Timeline container */
-  .experience-timeline {
-    position: relative;
-    margin: 2rem 0;
-    padding: 2rem 0;
-  }
-  
-  /* Vertical line down the center */
-  .experience-timeline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background-color: #ccc;
-    transform: translateX(-50%);
-  }
-  
-  /* Each experience item in the timeline */
-  .experience-item {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    margin: 2rem 0;
-    opacity: 0;                  /* Initially hidden */
-    transform: translateY(50px); /* Slide up effect on appear */
-    transition: all 0.6s ease-out;
-  }
-  
-  .experience-item.in-view {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
-  
-  /* Left side: image card */
+}
+
+.exp-close-button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* Responsive stacking for smaller screens */
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 20px;
+  }
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .experience-image {
-    width: 45%;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    margin-right: 2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .experience-image:hover {
-    transform: scale(1.02);
-  }
-  
-  /* Overlay on hover (similar to Projects) */
-  .experience-image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 1rem;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
-  
-  .experience-image:hover .experience-image-overlay {
-    transform: translateY(0);
-  }
-  
-  .experience-image-overlay button {
-    background: #007bff;
-    border: none;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .experience-image-overlay button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Dot in the center of timeline */
-  .experience-dot {
-    position: absolute;
-    left: 50%;
-    width: 14px;
-    height: 14px;
-    background-color: #007bff;
-    border-radius: 50%;
-    transform: translateX(-50%);
-    margin-top: 0.2rem;
-  }
-  
-  /* Right side: text + year */
-  .experience-content {
-    width: 45%;
-    padding-top: 0.5rem;
-    padding-left: 10rem;
-  }
-  
-  .experience-content h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #007bff;
-  }
-  
-  .experience-content h4 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .experience-year {
-    margin-top: 1rem;
-    font-style: italic;
-    color: #666;
-  }
-  
-  /* Modal Overlay & Content */
-  .exp-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
-  
-  .exp-modal-content {
-    position: relative;
-    background: #fff;
-    width: 90%;
-    max-width: 700px;
-    padding: 2rem;
-    border-radius: 8px;
-    animation: slideDown 0.3s ease forwards;
+  .experience-dot {
+    left: 20px;
+    margin-top: 0;
   }
-  
-  @keyframes slideDown {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .experience-content {
+    width: 100%;
+    padding-top: 0;
+    margin-left: 2rem;
   }
-  
-  .exp-close-button {
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    font-weight: bold;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
-  }
-  
-  /* Responsive stacking for smaller screens */
-  @media (max-width: 768px) {
-    .experience-timeline::before {
-      left: 20px;
-    }
-    .experience-item {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .experience-image {
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-    .experience-dot {
-      left: 20px;
-      margin-top: 0;
-    }
-    .experience-content {
-      width: 100%;
-      padding-top: 0;
-      margin-left: 2rem;
-    }
-  }
-  
+}

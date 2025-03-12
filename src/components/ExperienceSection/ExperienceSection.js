@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./ExperienceSection.css";
 
 const experienceData = [
@@ -27,40 +27,12 @@ const experienceData = [
 
 function ExperienceSection() {
   const [selectedExp, setSelectedExp] = useState(null);
-  const [inViewIds, setInViewIds] = useState([]); // track which items are in view
 
   // Modal open/close
   const openModal = (exp) => setSelectedExp(exp);
   const closeModal = () => setSelectedExp(null);
 
-  // IntersectionObserver for each experience item
-  const itemRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setInViewIds((prev) => [...prev, entry.target.id]);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    itemRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      itemRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
-
-  // Close modal if click outside content
+  // Close modal if clicking outside the modal content
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("exp-modal-overlay")) {
       closeModal();
@@ -71,15 +43,8 @@ function ExperienceSection() {
     <section className="experience-section" id="experience">
       <h2>Experience</h2>
       <div className="experience-timeline">
-        {experienceData.map((exp, index) => (
-          <div
-            key={exp.id}
-            id={`exp-item-${exp.id}`}
-            ref={(el) => (itemRefs.current[index] = el)}
-            className={`experience-item ${
-              inViewIds.includes(`exp-item-${exp.id}`) ? "in-view" : ""
-            }`}
-          >
+        {experienceData.map((exp) => (
+          <div key={exp.id} className="experience-item">
             {/* Left side: image card with overlay */}
             <div
               className="experience-image"
@@ -106,10 +71,7 @@ function ExperienceSection() {
 
       {/* Modal */}
       {selectedExp && (
-        <div
-          className="exp-modal-overlay"
-          onClick={handleOverlayClick}
-        >
+        <div className="exp-modal-overlay" onClick={handleOverlayClick}>
           <div className="exp-modal-content">
             <button className="exp-close-button" onClick={closeModal}>
               &times;
