@@ -52,7 +52,7 @@ function ExperienceSection() {
             >
               <div className="experience-image-overlay">
                 <p>{exp.shortDescription}</p>
-                <button onClick={() => openModal(exp)}>Show More</button>
+                <p className="experience-section-button" onClick={() => openModal(exp)}>Show More</p>
               </div>
             </div>
 

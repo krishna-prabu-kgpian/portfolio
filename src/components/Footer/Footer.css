@@ -1,6 +1,6 @@
 .footer {
     padding: 2rem;
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     text-align: center;
   }
@@ -32,6 +32,7 @@
     width: 24px; /* Adjust icon size */
     height: 24px;
     display: block;
+    filter: invert(1);
   }
   
   .footer-mail {

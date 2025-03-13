@@ -1,54 +1,68 @@
 import React, { useState } from "react";
 import "./ProjectsSection.css";
 import aboutImage from "../../assets/aboutImage.png"; 
+import DIYProject from "../../assets/DIYProject.jpeg";
+import PortfolioWebsite from "../../assets/PortfolioWebsite.png";
 const initialProjects = [
   {
     id: 1,
-    title: "Chat App",
-    backgroundImage: aboutImage, 
-    modalImage: aboutImage,
-    shortDescription: "A real-time chat application with Next.js, Socket.io, etc.",
-    longDescription:
-      "This project taught me a lot about real-time communication using Socket.io, user authentication with NextAuth, and working with Prisma as an ORM. It features real-time messaging, channels, and user presence. The UI is built with Tailwind CSS for a modern look and feel.",
-    skills: ["Next.js", "Socket.io", "Tailwind CSS", "NextAuth", "Prisma"],
-    githubLink: "https://github.com/your-username/chat-app",
-    demoLink: "https://chat-app.example.com",
-  },
-  {
-    id: 2,
-    title: "Portfolio Website",
+    title: "Campus Pal",
     backgroundImage: aboutImage,
     modalImage: aboutImage,
-    shortDescription: "My personal portfolio showcasing projects and skills.",
+    shortDescription: "A chatbot to answer all student queries regarding internships.",
     longDescription:
-      "Built with React and styled-components, this site highlights my design sense, project experience, and skillset. It features smooth scrolling, responsive design, and dynamic content that’s easy to update.",
-    skills: ["React", "styled-components", "Responsive Design"],
+      "Built to answer queries that a student may have regarding the CDC Placement and Internship Process. Performs RAG over the Foresight articles available, and helps the user with his/her query.",
+    skills: ["RAG", "Langchain", "Langgraph", "Chainlit", "Pinecone", "LlamaIndex"],
     githubLink: "https://github.com/your-username/portfolio",
     demoLink: "https://portfolio.example.com",
   },
   {
-    id: 3,
-    title: "E-commerce Store",
-    backgroundImage: aboutImage,
+    id: 2,
+    title: "NLP Based Text Summarizer",
+    backgroundImage: aboutImage, 
     modalImage: aboutImage,
-    shortDescription: "A full-stack e-commerce platform with cart, checkout, etc.",
+    shortDescription: "A real-time application which will summarize text messages.",
     longDescription:
-      "A Node.js and React-based e-commerce platform that includes a product catalog, shopping cart, secure checkout with Stripe integration, and a custom admin dashboard for managing products and orders.",
-    skills: ["React", "Node.js", "Stripe", "MongoDB"],
-    githubLink: "https://github.com/your-username/ecommerce",
-    demoLink: "https://ecommerce.example.com",
+      "This project aims to summarize whatsapp and other messages, and generates summaries of them. It is aimed for a conversation occuring in a group or between individuals, to generate concise and full summaries.",
+    skills: ["Fine Tuning", "Transformers", "HuggingFace", "NLP"],
+    githubLink: "https://github.com/your-username/chat-app",
+    demoLink: "https://chat-app.example.com",
+  },
+  {
+    id: 3,
+    title: "Portfolio Website",
+    backgroundImage: PortfolioWebsite,
+    modalImage: PortfolioWebsite,
+    shortDescription: "A portfolio website showcasing me, who I am, my achievements and interests.",
+    longDescription:
+      "A React App hosted on Netlify, showcasing my projects, skills, and other hobbies of mine. The site is responsive and has a clean, modern design. It uses CSS for styling.",
+    skills: ["React", "HTML", "CSS", "Javascipt"],
+    githubLink: "https://github.com/krishna-prabu-kgpian/portfolio",
+    demoLink: "https://krishnaprabu.netlify.app/",
   },
   {
     id: 4,
-    title: "E-commerce Store",
-    backgroundImage: aboutImage,
-    modalImage: aboutImage,
-    shortDescription: "A full-stack e-commerce platform with cart, checkout, etc.",
+    title: "Automatic Waste Segregator",
+    backgroundImage: DIYProject,
+    modalImage: DIYProject,
+    shortDescription: "An AI Powered Automatic Waste Segregator.",
     longDescription:
-      "A Node.js and React-based e-commerce platform that includes a product catalog, shopping cart, secure checkout with Stripe integration, and a custom admin dashboard for managing products and orders.",
-    skills: ["React", "Node.js", "Stripe", "MongoDB"],
-    githubLink: "https://github.com/your-username/ecommerce",
-    demoLink: "https://ecommerce.example.com",
+      "This project automates waste classification using OpenAI's Vision API and an Arduino-based sorting mechanism. The system downloads images from emails, processes them with AI for classification, and then transmits the classification data to an Arduino for physical sorting or further action.",
+    skills: ["Arduino", "Python", "Data Handling", "API Integration"],
+    githubLink: "https://github.com/krishna-prabu-kgpian/diy_project",
+    demoLink: "https://drive.google.com/file/d/1jgA1qZ4_fPEUxQzfD2-TWgAc1hFxtYgi/view?usp=sharing",
+  },
+  {
+    id: 5,
+    title: "Threshold: The Dawn of Civilization",
+    backgroundImage: DIYProject,
+    modalImage: DIYProject,
+    shortDescription: "A Turn-Based Strategy Board Game.",
+    longDescription:
+      "This project automates waste classification using OpenAI's Vision API and an Arduino-based sorting mechanism. The system downloads images from emails, processes them with AI for classification, and then transmits the classification data to an Arduino for physical sorting or further action.",
+    skills: ["Arduino", "Python", "Data Handling", "API Integration"],
+    githubLink: "https://github.com/krishna-prabu-kgpian/diy_project",
+    demoLink: "https://drive.google.com/file/d/1jgA1qZ4_fPEUxQzfD2-TWgAc1hFxtYgi/view?usp=sharing",
   },
 ];
 
@@ -88,7 +102,7 @@ function ProjectsSection() {
             <div className="card-overlay">
               <h3>{project.title}</h3>
               <p>{project.shortDescription}</p>
-              <button onClick={() => openModal(project)}>Show More</button>
+              <p className="projects-section-button" onClick={() => openModal(project)}>Show More</p>
             </div>
           </div>
         ))}

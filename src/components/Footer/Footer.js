@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import linkedInIcon from "../../assets/linkedin.png"; // example local icon
+import linkedInIcon from "../../assets/LinkedIn.jpeg"; // example local icon
 import githubIcon from "../../assets/github.png";     // example local icon
 
 function Footer() {
