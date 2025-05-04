@@ -2,14 +2,42 @@
   padding: 4rem 5rem;
   background-color: #f9f9f9;
   color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.education-section h2 {
+/* Dark theme styles */
+.dark-theme .education-section {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.education-title {
   text-align: center;
   margin-bottom: 3rem;
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 1px;
+  position: relative;
+}
+
+.education-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+  transform: translateX(-50%);
+}
+
+.dark-theme .education-title::after {
+  background: #4da6ff;
 }
 
 /* Timeline container */
@@ -29,6 +57,11 @@
   height: 100%;
   background-color: #ccc;
   transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.dark-theme .timeline::before {
+  background-color: #444;
 }
 
 /* Each timeline item (row) */
@@ -46,6 +79,11 @@
   padding-right: 2rem;
   font-weight: 600;
   color: #666;
+  transition: color 0.3s ease;
+}
+
+.dark-theme .timeline-year {
+  color: #aaa;
 }
 
 /* Dot in the center (node) */
@@ -58,56 +96,120 @@
   border-radius: 50%;
   transform: translateX(-50%);
   margin-top: 0.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dark-theme .timeline-dot {
+  background-color: #4da6ff;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: translateX(-50%) scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.dark-theme .timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 10px rgba(77, 166, 255, 0.5);
 }
 
 /* Content on the right side */
 .timeline-content {
   width: 45%;
-  padding-left: 10rem;
+  padding-left: 10rem; /* Increased padding to prevent text clipping */
   padding-bottom: 1rem;
   box-sizing: border-box;
+  position: relative; /* Added to create proper positioning context */
+  z-index: 2; /* Ensures content appears above the vertical line */
 }
 
 .timeline-content h3 {
   margin: 0;
   font-size: 1.2rem;
   color: #007bff;
+  transition: color 0.3s ease;
+  background: inherit; /* Inherit background to prevent transparency */
+}
+
+.dark-theme .timeline-content h3 {
+  color: #4da6ff;
 }
 
 .timeline-content h4 {
   margin: 0.5rem 0;
   font-weight: 600;
   color: #333;
+  transition: color 0.3s ease;
+  background: inherit; /* Inherit background to prevent transparency */
+}
+
+.dark-theme .timeline-content h4 {
+  color: #e0e0e0;
 }
 
 .timeline-content p {
   margin: 0.5rem 0 0;
   line-height: 1.6;
+  background: inherit; /* Inherit background to prevent transparency */
 }
 
 /* Responsive (stacked on small screens) */
+@media (max-width: 992px) {
+  .education-section {
+    padding: 3rem 3rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .education-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .education-title {
+    font-size: 2rem;
+  }
+  
   .timeline::before {
     left: 20px;
   }
+  
   .timeline-item {
     flex-direction: column;
     align-items: flex-start;
     margin: 2rem 0 4rem;
   }
+  
   .timeline-year {
     width: 100%;
     text-align: left;
-    padding: 0 0 1rem 2rem;
-    margin-left: 2rem;
+    padding: 0 0 1rem 3rem; /* Increased left padding */
+    margin-left: 20px;
+    position: relative;
+    font-weight: 700;
   }
+  
   .timeline-dot {
     left: 20px;
     margin-top: 0;
   }
+  
   .timeline-content {
     width: 100%;
-    padding-left: 3rem;
-    margin-top: 1rem;
+    padding-left: 3.5rem; /* Increased padding for mobile view */
+    margin-top: 0.5rem;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-content h4 {
+    font-size: 1rem;
+  }
+  
+  .timeline-content p {
+    font-size: 0.95rem;
   }
 }

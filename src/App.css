@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -16,4 +17,19 @@ body {
 }
 body {
   font-family: "Montserrat", sans-serif;
+}
+
+/* Global dark mode styles */
+.dark-theme {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.dark-theme a {
+  color: #4da6ff;
+}
+
+/* Add margin-top to account for fixed navbar */
+main, section:first-of-type {
+  margin-top: 80px; /* Adjust based on your navbar height */
 }

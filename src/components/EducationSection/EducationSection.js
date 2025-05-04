@@ -45,17 +45,19 @@ function TimelineItem({ year, degree, institution, description }) {
 function EducationSection() {
   return (
     <section className="education-section" id="education">
-      <h2>Education</h2>
-      <div className="timeline">
-        {educationData.map((item) => (
-          <TimelineItem
-            key={item.id}
-            year={item.year}
-            degree={item.degree}
-            institution={item.institution}
-            description={item.description}
-          />
-        ))}
+      <div className="container">
+        <h2 className="education-title">Education</h2>
+        <div className="timeline">
+          {educationData.map((item) => (
+            <TimelineItem
+              key={item.id}
+              year={item.year}
+              degree={item.degree}
+              institution={item.institution}
+              description={item.description}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
