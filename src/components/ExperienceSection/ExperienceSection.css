@@ -561,8 +561,8 @@
   }
 
   .experience-title {
-    font-size: 2.3rem;
-    margin-bottom: 3rem;
+    font-size: 2rem; /* Reduced from 2.3rem */
+    margin-bottom: 2.5rem; /* Reduced from 3rem */
   }
 
   .experience-timeline::before {
@@ -573,7 +573,7 @@
   .experience-item:nth-child(even) {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem; /* Reduced from 4rem */
   }
 
   .experience-image,
@@ -582,20 +582,22 @@
     margin-left: 40px;
     margin-right: 0;
     margin-bottom: 1rem;
-    height: 250px; /* Increased from 220px */
+    height: 220px; /* Reduced from 250px for better mobile fit */
     background-size: contain; /* Ensure image is fully visible */
   }
 
   .experience-dot {
     left: 20px;
-    margin-top: 110px; /* Position dot in the middle of the image */
+    margin-top: 100px; /* Adjusted for reduced image height */
+    width: 18px; /* Slightly smaller dot */
+    height: 18px; /* Slightly smaller dot */
   }
 
   .experience-content,
   .experience-item:nth-child(even) .experience-content {
     width: calc(100% - 40px);
     padding-top: 0;
-    padding-left: 2rem;
+    padding-left: 1.5rem; /* Reduced from 2rem */
     padding-right: 0;
     margin-left: 40px;
     text-align: left;
@@ -636,26 +638,48 @@
 
 @media (max-width: 480px) {
   .exp-modal-content {
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
 
   .exp-modal-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Reduced from 1.5rem */
+  }
+  
+  .exp-modal-content p {
+    font-size: 0.9rem; /* Smaller text for modal content */
+    line-height: 1.5;
   }
 
   .exp-close-button {
-    top: 0.8rem;
-    right: 0.8rem;
-    width: 35px;
-    height: 35px;
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem; /* Smaller close button text */
   }
 
   .experience-title {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduced from 2rem */
+  }
+  
+  .experience-content h3 {
+    font-size: 1.2rem; /* Smaller heading */
+  }
+  
+  .experience-content p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+  
+  .experience-role {
+    font-size: 1rem; /* Smaller role text */
+  }
+  
+  .experience-company {
+    font-size: 0.9rem; /* Smaller company name */
   }
 
   /* Smaller modal image on very small screens */
   .exp-modal-image {
-    max-height: 200px;
+    max-height: 180px;
   }
 }

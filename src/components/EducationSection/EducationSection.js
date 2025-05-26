@@ -8,7 +8,7 @@ const educationData = [
     year: "2023 - 2028 (Present)",
     degree: "Dual Degree (BTech + MTech) in Computer Science",
     institution: "Indian Institute of Technology (IIT) Kharagpur",
-    description: "Focused on software engineering, data structures, and AI."
+    description: "Pursuing a Dual Degree in Computer Science and Engineering with a CGPA of 9.26, focusing on AI, robotics, and real-time systems"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const educationData = [
     degree: "12th Grade",
     institution: "FIITJEE Hyderabad",
     description:
-      "Specialized in big data, machine learning, and cloud computing."
+      "Completed Class XII with 957/1000 through FIITJEE’s integrated JEE program, securing AIR 604 in JEE Advanced and 1482 in JEE Mains"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const educationData = [
     degree: "10th Grade",
     institution: "Vikas the Concept School",
     description:
-      "Continuously exploring advanced AI/ML techniques, LLMs, and cutting-edge frameworks."
+      "Completed Class X with an A2 grade, where I first developed a love for math and explored extracurriculars like chess and game development"
   }
 ];
 

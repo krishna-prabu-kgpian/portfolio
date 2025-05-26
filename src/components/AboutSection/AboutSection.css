@@ -1,5 +1,5 @@
 .about {
-  padding: 6rem 2rem 4rem;
+  padding: 4.5rem 2rem 4rem; /* Reduced from 6rem to 4.5rem for top padding */
   background-color: #333; /* Dark background for light mode */
   color: #fff; /* White text for light mode */
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -94,7 +94,7 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 5rem 1.5rem 3rem;
+    padding: 4rem 1.5rem 3rem; /* Already reduced in mobile view */
   }
 
   .about__wrapper {
@@ -117,15 +117,22 @@
 }
 
 @media (max-width: 480px) {
+  .about {
+    padding: 3rem 1.5rem 2.5rem; /* Further reduced for smallest screens */
+  }
+  
   .about__title {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduced from 2rem */
+    margin-bottom: 2rem;
   }
   
   .about__content p {
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller text */
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
   
   .about__image img {
-    max-width: 80%;
+    max-width: 70%; /* Reduced from 80% */
   }
 }

@@ -1,54 +1,100 @@
 import React, { useState, useEffect } from "react";
 import NSSCLogo from "../../assets/NSSC.png";
 import AirbotixLogo from "../../assets/Airbotix.png"
+import SWGLogo from "../../assets/SWGLogo.jpg"; // Using NSSC logo as placeholder, replace with actual SWG logo
 import "./ExperienceSection.css";
 
 const experienceData = [
   {
     id: 1,
-    role: "AI/ML/Robotics Intern",
+    role: "AI/ML Intern",
     company: "Airbotix",
     location: "Remote",
-    year: "Dec'24 - May'25 (Present)",
+    year: "Dec'24 – May'25 (Present)",
     backgroundImage: AirbotixLogo,
-    shortDescription: "Working on machine learning solutions for autonomous systems.",
+    shortDescription: "Working on AI systems for real-time object tracking and natural language-driven robotics control.",
     longDescription: `
-      <p>At Airbotix, I'm deeply involved in developing and optimizing machine learning algorithms for autonomous drone navigation and control systems.</p>
-      
-      <p>Key responsibilities:</p>
-      <ul>
-        <li>Implementing computer vision algorithms for object detection and tracking</li>
-        <li>Optimizing reinforcement learning models for flight control</li>
-        <li>Collaborating with hardware engineers to integrate ML solutions with drone systems</li>
-        <li>Testing and validating ML models in simulated environments</li>
-      </ul>
-      
-      <p>This role has significantly enhanced my expertise in practical AI applications and autonomous systems engineering.</p>
-    `,
-    skills: ["Python", "TensorFlow", "Computer Vision", "Reinforcement Learning", "Keras"]
+    <p>At Airbotix, I'm building applied AI systems that bridge <strong>computer vision</strong>, <strong>natural language processing (NLP)</strong>, and <strong>robotics</strong>. The main focus of my work has been on creating a real-time <strong>aerial object tracking</strong> model, and enabling a quadrupedal robot to understand and respond to <strong>natural language</strong> commands in real time.</p>
+
+    <p><strong>Key responsibilities:</strong></p>
+    <ul>
+      <li>Built a <strong>real-time object detection pipeline</strong> using <strong>Faster R-CNN</strong>, tailored for aerial vehicle datasets</li>
+      <li>Designed a <strong>natural language-based control system</strong> to convert user commands into motion goals</li>
+      <li>Packaged the models into <strong>modular Python tools</strong> for integration into the broader robotics platform</li>
+      <li>Worked closely with control architecture constraints, keeping latency and deployability in mind</li>
+    </ul>
+
+    <p>This internship has helped me apply <strong>LLMs</strong> and <strong>computer vision</strong> in a practical robotics setting, and sharpened my skills in fast prototyping, integration, and building for real-world use.</p>
+  `,
+
+    skills: [
+      "Python",
+      "Computer Vision",
+      "Faster R-CNN",
+      "Natural Language Processing",
+      "Robotics",
+      "Vision Language Models",
+      "LangChain",
+      "Modular Deployment"
+    ]
   },
   {
     id: 2,
-    role: "Junior Coordinator",
-    company: "spAts",
+    role: "Associate Member",
+    company: "Student Welfare Group",
     location: "IIT Kharagpur",
-    year: "Aug'23 - Nov'23",
-    backgroundImage: NSSCLogo,
-    shortDescription: "Managed technical operations and events for the student organization.",
+    year: "Aug'23 – May'24",
+    backgroundImage: SWGLogo,
+    shortDescription: "Organized academic and welfare initiatives to support and engage the student community at IIT Kharagpur.",
     longDescription: `
-      <p>As a Junior Coordinator at spAts (Student Platform for Activities and Technical Society) at IIT Kharagpur, I was responsible for organizing and executing technical events and workshops.</p>
-      
-      <p>Key achievements:</p>
+      <p>As an Associate Member of the Student Welfare Group (SWG), I worked on a variety of initiatives focused on academic support, peer mentorship, and campus engagement. I was part of the team that planned and executed events aimed at making student life smoother and more inclusive.</p>
+
+      <p>Key contributions:</p>
       <ul>
-        <li>Organized two campus-wide technical workshops with over 200 participants</li>
-        <li>Coordinated a team of 15 volunteers for event management</li>
-        <li>Developed and maintained the organization's website</li>
-        <li>Created promotional materials and marketing strategies for events</li>
+        <li>Organized <strong>Examania</strong>, SWG's flagship academic support event, providing curated prep materials and strategies during exam seasons</li>
+        <li>Helped run the <strong>Academic Orientation Webinar</strong> for incoming students, introducing them to course planning, minors, and institute culture</li>
+        <li>Contributed to <strong>Study Abroad 101</strong> and the <strong>Research Guidance Webinar</strong>, both designed to provide direction for students pursuing international education or academic research</li>
+        <li>Designed event posters and outreach material using <strong>Canva</strong> and <strong>Photoshop</strong> to ensure clear, consistent communication</li>
       </ul>
-      
-      <p>This experience strengthened my leadership, project management, and teamwork capabilities while providing valuable insights into event organization.</p>
+
+      <p>This experience helped me grow as a communicator and problem-solver, while also giving me insight into student needs and the value of thoughtful peer support.</p>
     `,
-    skills: ["Event Management", "Team Leadership", "Web Development", "Marketing"]
+    skills: [
+      "Event Planning",
+      "Organizing Skills",
+      "Graphic Design",
+      "Canva",
+      "Photoshop",
+    ]
+  },
+  {
+    id: 3,
+    role: "Junior Coordinator",
+    company: "National Students' Space Challenge (NSSC), spAts",
+    location: "IIT Kharagpur",
+    year: "Aug'23 – Nov'23",
+    backgroundImage: NSSCLogo,
+    shortDescription: "Assisted in organizing NSSC, focusing on participant accommodation and event logistics.",
+    longDescription: `
+      <p>As a Junior Coordinator for the <strong>National Students' Space Challenge (NSSC)</strong>, I was part of the organizing team for IIT Kharagpur's annual astro-tech fest. My main responsibility was handling <strong>accommodation logistics</strong> for outstation participants, while also supporting event operations during the fest.</p>
+
+      <p><strong>Key contributions:</strong></p>
+      <ul>
+        <li>Managed participant accommodation across multiple hostels, including check-ins and room allocation</li>
+        <li>Coordinated between <strong>hospitality</strong>, <strong>registration</strong>, and <strong>event teams</strong> to ensure smooth workflows</li>
+        <li>Helped troubleshoot on-ground issues and assisted with live event operations during peak hours</li>
+        <li>Worked with volunteers to maintain schedules and assist participants during their stay</li>
+      </ul>
+
+      <p>This experience helped me develop skills in <strong>event logistics</strong>, <strong>coordination</strong>, and staying composed in high-pressure environments.</p>
+    `,
+    skills: [
+      "Event Operations",
+      "Logistics Coordination",
+      "Team Collaboration",
+      "Problem Solving",
+      "On-ground Management"
+    ]
   }
 ];
 

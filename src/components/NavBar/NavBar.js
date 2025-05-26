@@ -24,13 +24,13 @@ function NavBar({ darkMode, toggleDarkMode }) {
         {/* <li><a href="#CV" onClick={() => setMenuOpen(false)}>CV</a></li> */}
       </ul>
       
-      <button 
+      {/* <button 
         className="theme-toggle" 
         onClick={toggleDarkMode}
         aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
       >
         {darkMode ? '☀️' : '🌙'}
-      </button>
+      </button> */}
     </nav>
   );
 }
